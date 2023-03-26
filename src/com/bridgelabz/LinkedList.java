@@ -41,5 +41,8 @@ public class LinkedList<T> {
         }
         return count;
     }
+
+    public void addLast(T value) {
+    }
 }
 
