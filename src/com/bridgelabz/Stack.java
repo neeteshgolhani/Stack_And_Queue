@@ -1,28 +1,27 @@
 package com.bridgelabz;
-public class Stack<T> {
-    private LinkedList<T> list;
+
+import java.util.NoSuchElementException;
+
+public class Stack {
+
+    private LinkedList<Integer> stack;
 
     public Stack() {
-        this.list = new LinkedList<T>();
+        stack = new LinkedList<Integer>();
     }
 
-    public void push(T data) {
-        list.addFirst(data);
+    public void push(int value) {
+        stack.addFirst(value);
     }
 
-    public T pop() {
-        return list.removeFirst();
-    }
-
-    public T peek() {
-        return list.getFirst();
+    public int pop() {
+        if (stack.isEmpty()) {
+            throw new NoSuchElementException("Stack is empty");
+        }
+        return stack.removeFirst();
     }
 
     public boolean isEmpty() {
-        return list.isEmpty();
-    }
-
-    public int size() {
-        return list.size();
+        return stack.isEmpty();
     }
 }
